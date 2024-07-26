@@ -1,0 +1,14 @@
+<div class="container mt-5 mb-5">
+    <div class="row gy-3">
+        @for(p of productList; track $index){
+            <div class="col-md-4">
+                <img class="w-100" [src]="p.pImg">
+            </div>
+        }
+    </div>
+    <h2 #view class="mt-4 text-center">Recommended Components</h2>
+    @defer(on viewport(view)){
+        <app-recomm-products></app-recomm-products>
+    }
+</div>
+
